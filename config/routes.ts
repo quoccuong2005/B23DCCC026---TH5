@@ -31,15 +31,40 @@
 		hideInMenu: true,
 	},
 	{
-		path: '/random-user',
-		name: 'RandomUser',
-		component: './RandomUser',
-		icon: 'ArrowsAltOutlined',
+		path: '/monhoc/tro-choi',
+		name: 'Trò chơi đoán số',
+		component: './MonHoc/DoanSo',
+		icon: 'ReadOutlined', // Đảm bảo icon ReadOutlined đã được import/config trong dự án
 	},
 	{
+		path: '/monhoc/danh-muc-mon-hoc',
+		name: 'Danh mục môn học',
+		component: './MonHoc/DanhMucMonHoc',
+		icon: 'BookOutlined', // Đảm bảo icon BookOutlined đã được import/config trong dự án
+	  },
+	  {
+		path: '/monhoc/muc-tieu-hoc-tap',
+		name: 'Mục tiêu học tập',
+		component: './MonHoc/MucTieuHocTap',
+		icon: 'ReadOutlined', // Đảm bảo icon ReadOutlined đã được import/config trong dự án
+	  },
+	  
+	// {
+	// 	path: '/random-user',
+	// 	name: 'RandomUser',
+	// 	component: './RandomUser',
+	// 	icon: 'ArrowsAltOutlined',
+	// },
+	// {
+	// 	path: '/todo-list',
+	// 	name: 'TodoList',
+	// 	component: './TodoList',
+	// 	icon: 'UnorderedListOutlined',
+	// },
+	{
 		path: '/todo-list',
-		name: 'TodoList',
-		component: './TodoList',
+		name: 'Quản lý tiến độ học tập',
+		component: './MonHoc/TienDoHocTap',
 		icon: 'UnorderedListOutlined',
 	},
 

@@ -36,6 +36,22 @@
 		component: './RandomUser',
 		icon: 'ArrowsAltOutlined',
 	},
+	{
+		path: '/todolist',
+		name: 'Todolist',
+		component: './todolist',
+	},
+
+	{
+		path: '/khoikienthuc',
+		name: 'Khối kiến thức',
+		component: './Khoikienthuc',
+	},
+	{
+		path: '/Quanlymonhoc',
+		name: 'Quản lý môn học',
+		component: './Quanlymonhoc',
+	},
 
 	// DANH MUC HE THONG
 	// {

@@ -1,0 +1,28 @@
+{
+  "khoiKienThuc": [
+    {
+      "id": "1",
+      "tenKhoi": "Tổng quan"
+    },
+    {
+      "id": "2",
+      "tenKhoi": "Chuyên sâu"
+    }
+  ],
+  "monHoc": [
+    {
+      "id": "2",
+      "maMon": "CS201",
+      "tenMon": "Cấu trúc dữ liệu và giải thuật",
+      "soTinChi": 3,
+      "khoiKienThucId": "1"
+    },
+    {
+      "id": "ee12",
+      "maMon": "CS202",
+      "tenMon": "Toán rời rạc",
+      "soTinChi": "3",
+      "khoiKienThucId": "2"
+    }
+  ]
+}

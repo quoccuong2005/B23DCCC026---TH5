@@ -51,6 +51,27 @@
 		component: './Bai2/DeThi',
 		icon: 'ReadOutlined', 
 	},
+	{
+		path: '/essay-question',
+		name: 'Quản lý câu hỏi',
+		component: '@/pages/Bai2/EssayQuestion',
+	},
+	{
+		path: '/khoikienthuc',
+		name: 'Khối kiến thức',
+		component: './Bai2/Khoikienthuc',
+	},
+	{
+		path: '/Quanlymonhoc',
+		name: 'Quản lý môn học',
+		component: './Bai2/Quanlymonhoc',
+	},
+	{
+		path: '/oantuti',
+		name: 'OanTuTi',
+		component: '@/pages/Bai2/oantuti',
+		icon: 'ArrowsAltOutlined',
+	},
 	// {
 	// 	path: '/monhoc/tro-choi',
 	// 	name: 'Trò chơi đoán số',

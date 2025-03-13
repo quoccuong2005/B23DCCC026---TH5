@@ -41,17 +41,13 @@
 		name: 'Todolist',
 		component: './todolist',
 	},
+	{
+		path: '/quanlylichhen',
+		name: 'Quản lý lịch hẹn',
+		component: './BAI_2/Quanlylichhen.js',
+	},
 
-	{
-		path: '/khoikienthuc',
-		name: 'Khối kiến thức',
-		component: './Khoikienthuc',
-	},
-	{
-		path: '/Quanlymonhoc',
-		name: 'Quản lý môn học',
-		component: './Quanlymonhoc',
-	},
+
 
 	// DANH MUC HE THONG
 	// {

@@ -38,40 +38,40 @@
 	},
 
 	// BAI THUC HANH 2
-	{
-		path: '/monhoc/cau-truc-de-thi',
-		name: 'Cấu trúc đề thi',
-		component: './Bai2/CauTruc',
-		icon: 'ReadOutlined', 
-	},
+	// {
+	// 	path: '/monhoc/cau-truc-de-thi',
+	// 	name: 'Cấu trúc đề thi',
+	// 	component: './Bai2/CauTruc',
+	// 	icon: 'ReadOutlined', 
+	// },
 
-	{
-		path: '/monhoc/de-thi',
-		name: 'Đề thi',
-		component: './Bai2/DeThi',
-		icon: 'ReadOutlined', 
-	},
-	{
-		path: '/essay-question',
-		name: 'Quản lý câu hỏi',
-		component: '@/pages/Bai2/EssayQuestion',
-	},
-	{
-		path: '/khoikienthuc',
-		name: 'Khối kiến thức',
-		component: './Bai2/Khoikienthuc',
-	},
-	{
-		path: '/Quanlymonhoc',
-		name: 'Quản lý môn học',
-		component: './Bai2/Quanlymonhoc',
-	},
-	{
-		path: '/oantuti',
-		name: 'OanTuTi',
-		component: '@/pages/Bai2/oantuti',
-		icon: 'ArrowsAltOutlined',
-	},
+	// {
+	// 	path: '/monhoc/de-thi',
+	// 	name: 'Đề thi',
+	// 	component: './Bai2/DeThi',
+	// 	icon: 'ReadOutlined', 
+	// },
+	// {
+	// 	path: '/essay-question',
+	// 	name: 'Quản lý câu hỏi',
+	// 	component: '@/pages/Bai2/EssayQuestion',
+	// },
+	// {
+	// 	path: '/khoikienthuc',
+	// 	name: 'Khối kiến thức',
+	// 	component: './Bai2/Khoikienthuc',
+	// },
+	// {
+	// 	path: '/Quanlymonhoc',
+	// 	name: 'Quản lý môn học',
+	// 	component: './Bai2/Quanlymonhoc',
+	// },
+	// {
+	// 	path: '/oantuti',
+	// 	name: 'OanTuTi',
+	// 	component: '@/pages/Bai2/oantuti',
+	// 	icon: 'ArrowsAltOutlined',
+	// },
 	// {
 	// 	path: '/monhoc/tro-choi',
 	// 	name: 'Trò chơi đoán số',
@@ -124,6 +124,8 @@
 	// 	],
 	// },
 
+	
+
 	{
 		path: '/notification',
 		routes: [
@@ -162,4 +164,17 @@
 	{
 		component: './exception/404',
 	},
+		// In config/routes.ts or config/config.js routes section
+		{
+			path: '/vanbang',
+			name: 'Văn bằng',
+			icon: 'FileTextOutlined',
+			component: './BAI_TH_4/vanBang',
+		  },
+		  
+		  
+		  // Catch-all route LAST
+		  {
+			component: './exception/404',
+		  }
 ];

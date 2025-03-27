@@ -1,160 +1,80 @@
 {
-  "khoiKienThuc": [
-    {
-      "id": 1,
-      "tenKhoi": "Tổng quan"
-    },
-    {
-      "id": 2,
-      "tenKhoi": "Chuyên sâu"
-    }
-  ],
-  "monHoc": [
-    {
-      "id": 1,
-      "maMon": "CS101",
-      "tenMon": "Nhập môn Công nghệ thông tin",
-      "soTinChi": 3,
-      "khoiKienThucId": 1
-    },
-    {
-      "id": 2,
-      "maMon": "CS201",
-      "tenMon": "Cấu trúc dữ liệu và giải thuật",
-      "soTinChi": 4,
-      "khoiKienThucId": 2
-    }
-  ],
-  "cauHoi": [
-    {
-      "id": 1,
-      "noiDung": "Trình bày các thành phần cơ bản của máy tính?",
-      "mucDo": 1,
-      "monHocId": 1,
-      "khoiKienThucId": 1
-    },
-    {
-      "id": 2,
-      "noiDung": "Mô tả thuật toán sắp xếp nhanh (Quick Sort)?",
-      "mucDo": 2,
-      "monHocId": 2,
-      "khoiKienThucId": 2
-    },
-    {
-      "id": 3,
-      "noiDung": "So sánh ngôn ngữ lập trình biên dịch và thông dịch?",
-      "mucDo": 0,
-      "monHocId": 1,
-      "khoiKienThucId": 1
-    }
-  ],
-  "deThi": [
-    {
-      "id": "92a0",
-      "name": "Đề kiểm tra số 1",
-      "ngayTao": "2025-03-14",
-      "monHoc": "Nhập môn Công nghệ thông tin",
-      "cauHoi": [
+	"soVanBang": [
+		{
+			"id": 1,
+			"nam": 2023,
+			"so_vao_so": 1
+		},
         {
-          "id": 3,
-          "noiDung": "So sánh ngôn ngữ lập trình biên dịch và thông dịch?",
-          "mucDo": 0,
-          "monHocId": 1,
-          "khoiKienThucId": 1
-        },
-        {
-          "id": 1,
-          "noiDung": "Trình bày các thành phần cơ bản của máy tính?",
-          "mucDo": 1,
-          "monHocId": 1,
-          "khoiKienThucId": 1
-        },
-        {
-          "id": 2,
-          "noiDung": "Mô tả thuật toán sắp xếp nhanh (Quick Sort)?",
-          "mucDo": 2,
-          "monHocId": 2,
-          "khoiKienThucId": 2
-        }
-      ],
-      "tenCauTruc": "Cấu trúc 1"
-    },
-    {
-      "id": "7751",
-      "name": "vu tien loc",
-      "ngayTao": "2025-03-15",
-      "monHoc": "Nhập môn Công nghệ thông tin",
-      "tenCauTruc": "Rượu Hennessy VSOP",
-      "cauHoi": [
-        {
-          "id": 3,
-          "noiDung": "So sánh ngôn ngữ lập trình biên dịch và thông dịch?",
-          "mucDo": 0,
-          "monHocId": 1,
-          "khoiKienThucId": 1
-        },
-        {
-          "id": 1,
-          "noiDung": "Trình bày các thành phần cơ bản của máy tính?",
-          "mucDo": 1,
-          "monHocId": 1,
-          "khoiKienThucId": 1
-        },
-        {
-          "id": 2,
-          "noiDung": "Mô tả thuật toán sắp xếp nhanh (Quick Sort)?",
-          "mucDo": 2,
-          "monHocId": 2,
-          "khoiKienThucId": 2
-        }
-      ]
-    }
-  ],
-  "cauTrucDeThi": [
-    {
-      "id": "46b1",
-      "name": "Cấu trúc 1",
-      "monHoc": "Nhập môn Công nghệ thông tin",
-      "khoiKienThuc": "Chuyên sâu",
-      "de": 1,
-      "trungBinh": 1,
-      "kho": 1
-    },
-    {
-      "id": "e702",
-      "name": "Rượu Hennessy VSOP",
-      "monHoc": "Nhập môn Công nghệ thông tin",
-      "khoiKienThuc": "Chuyên sâu",
-      "de": 1,
-      "trungBinh": 2,
-      "kho": 3
-    },
-    {
-      "id": "6dcb",
-      "name": "Rượu Revel",
-      "monHoc": "Cấu trúc dữ liệu và giải thuật",
-      "khoiKienThuc": "Chuyên sâu",
-      "de": 2,
-      "trungBinh": 0,
-      "kho": 4
-    },
-    {
-      "id": "4c91",
-      "name": "Phong cách nhà giáo",
-      "monHoc": "Nhập môn Công nghệ thông tin",
-      "khoiKienThuc": "Tổng quan",
-      "de": 3,
-      "trungBinh": 4,
-      "kho": 5
-    },
-    {
-      "id": "9c1d",
-      "name": "vu tien loc",
-      "monHoc": "Nhập môn Công nghệ thông tin",
-      "khoiKienThuc": "Tổng quan",
-      "de": 3,
-      "trungBinh": 4,
-      "kho": 2
-    }
-  ]
+			"id": 2,
+			"nam": 2024,
+			"so_vao_so": 2
+		}
+	],
+	"quyetDinh": [
+		{
+			"id": 1,
+			"so_quyet_dinh": "QĐ-2023-01",
+			"ngay_ban_hanh": "2023-06-01",
+			"trich_yeu": "Quyết định tốt nghiệp đợt 1 năm 2023",
+			"so_van_bang_id": 1
+		},
+		{
+			"id": 2,
+			"so_quyet_dinh": "QĐ-2023-02",
+			"ngay_ban_hanh": "2023-12-15",
+			"trich_yeu": "Quyết định tốt nghiệp đợt 2 năm 2023",
+			"so_van_bang_id": 1
+		}
+	],
+	"cauHinh": [
+		{
+			"id": 1,
+			"ten_truong": "Dân tộc",
+			"kieu_du_lieu": "String"
+		},
+		{
+			"id": 2,
+			"ten_truong": "Điểm trung bình",
+			"kieu_du_lieu": "Number"
+		}
+	],
+	"vanBang": [
+		{
+			"id": 1,
+			"so_vao_so": 1,
+			"so_hieu_van_bang": "VB001",
+			"ma_sinh_vien": "SV001",
+			"ho_ten": "Nguyen Van A",
+			"ngay_sinh": "1999-05-15",
+			"diem_trung_binh": 8.5,
+			"xep_loai": "Giỏi",
+			"he_dao_tao": "Chính quy",
+			"noi_sinh": "Hà Nội",
+			"dan_toc": "Kinh",
+			"quyet_dinh_id": 1
+		},
+		{
+			"id": 2,
+			"so_vao_so": 1,
+			"so_hieu_van_bang": "VB002",
+			"ma_sinh_vien": "SV002",
+			"ho_ten": "Tran Thi B",
+			"ngay_sinh": "2000-08-20",
+			"diem_trung_binh": 7.8,
+			"xep_loai": "Khá",
+			"he_dao_tao": "Tại chức",
+			"noi_sinh": "Hải Phòng",
+			"dan_toc": "Tày",
+			"quyet_dinh_id": 1
+		}
+	],
+	"traCuuVanBang": {
+		"thamSoTimKiem": ["so_hieu_van_bang", "so_vao_so", "ma_sinh_vien", "ho_ten", "ngay_sinh"],
+		"yeuCauNhapToiThieu": 2,
+		"tongSoLuotTraCuuTheoQuyetDinh": {
+			"QĐ2025-001": 20,
+			"QĐ2025-002": 8
+		}
+	}
 }

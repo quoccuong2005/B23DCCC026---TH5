@@ -1,33 +1,50 @@
 import React, { useEffect } from 'react';
 import { Modal, Form, Input, DatePicker, InputNumber } from 'antd';
 import moment from 'moment';
+import { useModel } from 'umi';
 
-export interface VanBangFormProps {
-  visible: boolean;
+interface VanBangModelType {
+  vanBangs: VanBangAPI.VanBang[];
+  soVanBangs: VanBangAPI.SoVanBang[];
+  quyetDinhs: VanBangAPI.QuyetDinh[];
+  cauHinhs: VanBangAPI.CauHinh[];
+  selectedVanBang: VanBangAPI.VanBang | null;
+  isModalVisible: boolean;
   isEditing: boolean;
-  initialValues?: any;
-  cauHinhs: any[];
-  onCancel: () => void;
-  onFinish: (values: any) => void;
+  loading: boolean;
+  fetchAllData: () => Promise<void>;
+  getNextSoVaoSo: (soVanBangId: number) => number;
+  addVanBang: (data: VanBangAPI.VanBang) => Promise<any>;
+  updateVanBangData: (id: number, data: VanBangAPI.VanBang) => Promise<any>;
+  deleteVanBangData: (id: number) => Promise<void>;
+  initAddForm: (quyetDinhId: number) => void;
+  initEditForm: (id: number) => void;
+  closeModal: () => void;
 }
 
-const VanBangForm: React.FC<VanBangFormProps> = ({
-  visible,
-  isEditing,
-  initialValues,
-  cauHinhs,
-  onCancel,
-  onFinish,
-}) => {
+const VanBangForm: React.FC = () => {
   const [form] = Form.useForm();
+  
+  // Use the correct model name and type - using dot notation instead of slash
+  const model = useModel('bai_th_4.vanBang') as VanBangModelType;
+  
+  const {
+    selectedVanBang,
+    isModalVisible,
+    isEditing,
+    closeModal,
+    addVanBang,
+    updateVanBangData,
+    cauHinhs,
+  } = model;
 
   useEffect(() => {
-    if (initialValues) {
-      const values = { ...initialValues };
+    if (selectedVanBang) {
+      const values = { ...selectedVanBang };
       if (values.ngay_sinh) {
-        values.ngay_sinh = moment(values.ngay_sinh);
+        values.ngay_sinh = moment(values.ngay_sinh).format('YYYY-MM-DD');
       }
-      // For each dynamic field, parse Date values if needed
+      // Convert dynamic date fields
       cauHinhs.forEach(field => {
         const key = field.ten_truong.toLowerCase().replace(/\s+/g, '_');
         if (values[key] && field.kieu_du_lieu === 'Date') {
@@ -38,9 +55,9 @@ const VanBangForm: React.FC<VanBangFormProps> = ({
     } else {
       form.resetFields();
     }
-  }, [initialValues, form, cauHinhs]);
+  }, [selectedVanBang, form, cauHinhs]);
 
-  const renderDynamicField = (field: any) => {
+  const renderDynamicField = (field: VanBangAPI.CauHinh) => {
     const key = field.ten_truong.toLowerCase().replace(/\s+/g, '_');
     if (field.kieu_du_lieu === 'String') {
       return (
@@ -64,30 +81,35 @@ const VanBangForm: React.FC<VanBangFormProps> = ({
     return null;
   };
 
+  const handleOk = async () => {
+    try {
+      const values = await form.validateFields();
+      if (values.ngay_sinh) {
+        values.ngay_sinh = values.ngay_sinh.format('YYYY-MM-DD');
+      }
+      cauHinhs.forEach(field => {
+        const key = field.ten_truong.toLowerCase().replace(/\s+/g, '_');
+        if (values[key] && field.kieu_du_lieu === 'Date') {
+          values[key] = values[key].format('YYYY-MM-DD');
+        }
+      });
+      if (isEditing && selectedVanBang) {
+        await updateVanBangData(selectedVanBang.id as number, values);
+      } else {
+        await addVanBang(values as VanBangAPI.VanBang);
+      }
+      closeModal();
+    } catch (info) {
+      console.error('Validation Failed:', info);
+    }
+  };
+
   return (
     <Modal
-      visible={visible}
+      visible={isModalVisible}
       title={isEditing ? 'Chỉnh sửa Văn bằng' : 'Thêm Văn bằng'}
-      onCancel={onCancel}
-      onOk={() => {
-        form
-          .validateFields()
-          .then(values => {
-            if (values.ngay_sinh) {
-              values.ngay_sinh = values.ngay_sinh.format('YYYY-MM-DD');
-            }
-            cauHinhs.forEach(field => {
-              const key = field.ten_truong.toLowerCase().replace(/\s+/g, '_');
-              if (values[key] && field.kieu_du_lieu === 'Date') {
-                values[key] = values[key].format('YYYY-MM-DD');
-              }
-            });
-            onFinish(values);
-          })
-          .catch(info => {
-            console.error('Validation Failed:', info);
-          });
-      }}
+      onCancel={closeModal}
+      onOk={handleOk}
     >
       <Form form={form} layout="vertical">
         {/* 5 default fields */}
@@ -122,7 +144,6 @@ const VanBangForm: React.FC<VanBangFormProps> = ({
         >
           <DatePicker style={{ width: '100%' }} />
         </Form.Item>
-        {/* Field for quyết định */}
         <Form.Item
           label="Quyết định (ID)"
           name="quyet_dinh_id"

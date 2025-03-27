@@ -4,7 +4,24 @@ import { useModel } from 'umi';
 import moment from 'moment';
 import VanBangForm from './Form';
 
+interface VanBangModelType {
+  vanBangs: VanBangAPI.VanBang[];
+  cauHinhs: VanBangAPI.CauHinh[];
+  loading: boolean;
+  isModalVisible: boolean;
+  isEditing: boolean;
+  selectedVanBang: VanBangAPI.VanBang | null;
+  initAddForm: (quyetDinhId: number) => void;
+  initEditForm: (id: number) => void;
+  closeModal: () => void;
+  addVanBang: (data: VanBangAPI.VanBang) => Promise<any>;
+  updateVanBangData: (id: number, data: VanBangAPI.VanBang) => Promise<any>;
+  deleteVanBangData: (id: number) => Promise<void>;
+  fetchAllData: () => Promise<void>;
+}
+
 const VanBangPage: React.FC = () => {
+  // Change 'bai_th_4/vanBang' to 'bai_th_4.vanBang'
   const {
     vanBangs,
     cauHinhs,
@@ -19,7 +36,7 @@ const VanBangPage: React.FC = () => {
     updateVanBangData,
     deleteVanBangData,
     fetchAllData,
-  } = useModel('bai_th_4.vanBang');
+  } = useModel('bai_th_4.vanBang') as VanBangModelType;
 
   // Build dynamic columns from cấu hình
   const dynamicColumns = cauHinhs.map((field) => {
@@ -78,21 +95,6 @@ const VanBangPage: React.FC = () => {
     },
   ];
 
-  // Handle form submission
-  const handleFinish = async (values: any) => {
-    try {
-      if (isEditing && selectedVanBang) {
-        await updateVanBangData(selectedVanBang.id!, values);
-      } else {
-        await addVanBang(values);
-      }
-      closeModal();
-      fetchAllData();
-    } catch (error) {
-      console.error('Submit error:', error);
-    }
-  };
-
   return (
     <div style={{ padding: 20 }}>
       <Button type="primary" onClick={() => initAddForm(1)}>
@@ -105,16 +107,8 @@ const VanBangPage: React.FC = () => {
         loading={loading}
         style={{ marginTop: 20 }}
       />
-      {isModalVisible && (
-        <VanBangForm
-          visible={isModalVisible}
-          isEditing={isEditing}
-          initialValues={selectedVanBang || {}}
-          cauHinhs={cauHinhs}
-          onCancel={closeModal}
-          onFinish={handleFinish}
-        />
-      )}
+      {/* We don't need to pass props to VanBangForm since it uses the model directly */}
+      <VanBangForm />
     </div>
   );
 };

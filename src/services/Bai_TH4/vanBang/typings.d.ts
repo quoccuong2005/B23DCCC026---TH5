@@ -10,11 +10,13 @@ declare namespace VanBangAPI {
     // Additional dynamic fields (e.g., diem_trung_binh, xep_loai, etc.)
     [key: string]: any;
   }
+  
   export interface SoVanBang {
     id: number;
     nam: number;
     so_vao_so: number;
   }
+  
   export interface QuyetDinh {
     id: number;
     so_quyet_dinh: string;
@@ -22,9 +24,29 @@ declare namespace VanBangAPI {
     trich_yeu: string;
     so_van_bang_id: number;
   }
+  
   export interface CauHinh {
     id: number;
     ten_truong: string;
     kieu_du_lieu: 'String' | 'Number' | 'Date';
+  }
+
+  export interface VanBangModelType {
+    vanBangs: VanBangAPI.VanBang[];
+    soVanBangs?: VanBangAPI.SoVanBang[];
+    quyetDinhs?: VanBangAPI.QuyetDinh[];
+    cauHinhs: VanBangAPI.CauHinh[];
+    loading: boolean;
+    isModalVisible: boolean;
+    isEditing: boolean;
+    selectedVanBang: VanBangAPI.VanBang | null;
+    initAddForm: (quyetDinhId: number) => void;
+    initEditForm: (id: number) => void;
+    closeModal: () => void;
+    addVanBang: (data: VanBangAPI.VanBang) => Promise<any>;
+    updateVanBangData: (id: number, data: VanBangAPI.VanBang) => Promise<any>;
+    deleteVanBangData: (id: number) => Promise<void>;
+    fetchAllData: () => Promise<void>;
+    getNextSoVaoSo?: (soVanBangId: number) => number;
   }
 }

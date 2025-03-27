@@ -2,31 +2,13 @@ import React, { useEffect } from 'react';
 import { Modal, Form, Input, DatePicker, InputNumber } from 'antd';
 import moment from 'moment';
 import { useModel } from 'umi';
-
-interface VanBangModelType {
-  vanBangs: VanBangAPI.VanBang[];
-  soVanBangs: VanBangAPI.SoVanBang[];
-  quyetDinhs: VanBangAPI.QuyetDinh[];
-  cauHinhs: VanBangAPI.CauHinh[];
-  selectedVanBang: VanBangAPI.VanBang | null;
-  isModalVisible: boolean;
-  isEditing: boolean;
-  loading: boolean;
-  fetchAllData: () => Promise<void>;
-  getNextSoVaoSo: (soVanBangId: number) => number;
-  addVanBang: (data: VanBangAPI.VanBang) => Promise<any>;
-  updateVanBangData: (id: number, data: VanBangAPI.VanBang) => Promise<any>;
-  deleteVanBangData: (id: number) => Promise<void>;
-  initAddForm: (quyetDinhId: number) => void;
-  initEditForm: (id: number) => void;
-  closeModal: () => void;
-}
+import '../../../services/Bai_TH4/vanBang/typings';
 
 const VanBangForm: React.FC = () => {
   const [form] = Form.useForm();
   
   // Use the correct model name and type - using dot notation instead of slash
-  const model = useModel('bai_th_4.vanBang') as VanBangModelType;
+  const model = useModel('bai_th_4.vanBang') as VanBangAPI.VanBangModelType;
   
   const {
     selectedVanBang,

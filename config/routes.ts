@@ -42,10 +42,13 @@
 		component: './todolist',
 	},
 	{
-		path: '/quanlylichhen',
-		name: 'Quản lý lịch hẹn',
-		component: './BAI_2/Quanlylichhen.js',
+		path: '/tracuuvanbang',
+		name: 'Tra Cứu Văn Bằng',
+		component: './TH4/Tracuuthongtin',
+		icon: 'SearchOutlined',
 	},
+
+
 
 
 

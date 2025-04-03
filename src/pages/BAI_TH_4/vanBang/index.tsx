@@ -1,75 +1,99 @@
-import React from 'react';
-import { Table, Button, message } from 'antd';
-import { useModel } from 'umi';
+import React, { useEffect } from 'react';
+import { Button, Table, message, Spin } from 'antd';
 import moment from 'moment';
+import { useModel } from 'umi';
 import VanBangForm from './Form';
-import '../../../services/Bai_TH4/vanBang/typings';
+import { VanBangAPI } from '../../../services/Bai_TH4/vanBang/typings';
 
+/**
+ * Văn Bằng Page - Displays list of văn bằng records with CRUD operations
+ */
 const VanBangPage: React.FC = () => {
-  
-  const {
-    vanBangs,
-    cauHinhs,
-    loading,
-    isModalVisible,
-    isEditing,
-    selectedVanBang,
-    initAddForm,
-    initEditForm,
-    closeModal,
-    addVanBang,
-    updateVanBangData,
-    deleteVanBangData,
-    fetchAllData,
-  } = useModel('bai_th_4.vanBang') as VanBangAPI.VanBangModelType;
+  // Get data and methods from the model
+  const model = useModel('bai_th_4.vanBang') as VanBangAPI.VanBangModelType;
+  const { 
+    vanBangs, 
+    loading, 
+    initAddForm, 
+    initEditForm, 
+    deleteVanBangData, 
+    fetchAllData, 
+    isModalVisible 
+  } = model;
 
-  // Build dynamic columns from cấu hình
-  const dynamicColumns = cauHinhs.map((field) => {
-    const key = field.ten_truong.toLowerCase().replace(/\s+/g, '_');
-    return {
-      title: field.ten_truong,
-      dataIndex: key,
-      key,
-      render: (text: any) => {
-        if (field.kieu_du_lieu === 'Date' && text) {
-          return moment(text).format('YYYY-MM-DD');
-        }
-        return text;
-      },
-    };
-  });
+  // Load data on component mount
+  useEffect(() => {
+    fetchAllData();
+  }, [fetchAllData]);
 
+  // Define table columns
   const columns = [
-    { title: 'Số vào sổ', dataIndex: 'so_vao_so', key: 'so_vao_so' },
-    { title: 'Số hiệu văn bằng', dataIndex: 'so_hieu_van_bang', key: 'so_hieu_van_bang' },
-    { title: 'Mã sinh viên', dataIndex: 'ma_sinh_vien', key: 'ma_sinh_vien' },
-    { title: 'Họ tên', dataIndex: 'ho_ten', key: 'ho_ten' },
+    { 
+      title: 'Số vào sổ', 
+      dataIndex: 'so_vao_so',
+      width: 100
+    },
+    { 
+      title: 'Số hiệu văn bằng', 
+      dataIndex: 'so_hieu_van_bang',
+      width: 150 
+    },
+    { 
+      title: 'Mã sinh viên', 
+      dataIndex: 'ma_sinh_vien',
+      width: 120 
+    },
+    { 
+      title: 'Họ tên', 
+      dataIndex: 'ho_ten',
+      width: 180 
+    },
     {
       title: 'Ngày sinh',
       dataIndex: 'ngay_sinh',
-      key: 'ngay_sinh',
-      render: (text: string) => (text ? moment(text).format('YYYY-MM-DD') : ''),
+      width: 120,
+      render: (text: string) => text ? moment(text).format('YYYY-MM-DD') : '',
     },
-    { title: 'Quyết định', dataIndex: 'quyet_dinh_id', key: 'quyet_dinh_id' },
-    ...dynamicColumns,
+    { 
+      title: 'Điểm TB', 
+      dataIndex: 'diem_trung_binh',
+      width: 100,
+      render: (value: number) => value?.toFixed(2) || '',
+    },
+    { 
+      title: 'Xếp loại', 
+      dataIndex: 'xep_loai',
+      width: 100 
+    },
+    { 
+      title: 'Dân tộc', 
+      dataIndex: 'dan_toc',
+      width: 100 
+    },
+    { 
+      title: 'Quyết định (ID)', 
+      dataIndex: 'quyet_dinh_id',
+      width: 130 
+    },
     {
-      title: 'Hành động',
-      key: 'action',
+      title: 'Actions',
+      fixed: 'right' as const,
+      width: 150,
       render: (_: any, record: any) => (
         <>
           <Button type="link" onClick={() => initEditForm(record.id)}>
             Sửa
           </Button>
-          <Button
-            type="link"
-            danger
+          <Button 
+            type="link" 
+            danger 
             onClick={async () => {
               try {
                 await deleteVanBangData(record.id);
                 fetchAllData();
-                message.success('Xóa văn bằng thành công');
+                message.success('Đã xóa thành công');
               } catch (error) {
-                message.error('Lỗi khi xóa văn bằng');
+                message.error('Có lỗi xảy ra khi xóa');
               }
             }}
           >
@@ -82,18 +106,26 @@ const VanBangPage: React.FC = () => {
 
   return (
     <div style={{ padding: 20 }}>
-      <Button type="primary" onClick={() => initAddForm(1)}>
-        Thêm Văn bằng
-      </Button>
-      <Table
-        rowKey="id"
-        dataSource={vanBangs}
-        columns={columns}
-        loading={loading}
-        style={{ marginTop: 20 }}
-      />
-      {/* We don't need to pass props to VanBangForm since it uses the model directly */}
-      <VanBangForm />
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
+        <Button type="primary" onClick={() => initAddForm(1)}>
+          Thêm Văn bằng
+        </Button>
+        <Button onClick={fetchAllData}>
+          Làm mới dữ liệu
+        </Button>
+      </div>
+      
+      <Spin spinning={loading}>
+        <Table 
+          rowKey="id" 
+          dataSource={vanBangs} 
+          columns={columns} 
+          scroll={{ x: 1300 }}
+          pagination={{ pageSize: 10 }}
+        />
+      </Spin>
+      
+      {isModalVisible && <VanBangForm />}
     </div>
   );
 };

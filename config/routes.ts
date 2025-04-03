@@ -1,4 +1,6 @@
-﻿export default [
+﻿import path from "path";
+
+export default [
 	{
 		path: '/user',
 		layout: false,
@@ -42,10 +44,9 @@
 		component: './todolist',
 	},
 	{
-		path: '/tracuuvanbang',
-		name: 'Tra Cứu Văn Bằng',
-		component: './TH4/Tracuuthongtin',
-		icon: 'SearchOutlined',
+		path: "/Quanlydonhang",
+		name: "QuanLyDonHang",
+		component: "./Quanlydonhang",
 	},
 
 

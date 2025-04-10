@@ -1,4 +1,3 @@
-
 export default [
     {
         path: '/user',
@@ -66,13 +65,6 @@ export default [
         component: './exception/DangCapNhat',
         layout: false,
     },
-    // {
-    //     path: '/vanbang',
-    //     name: 'Văn bằng',
-    //     icon: 'FileTextOutlined',
-    //     exact: true,
-    //     component: './BAI_TH_4/vanBang',
-    // },
 	{
 		path: '/random-user',
 		name: 'Random User',
@@ -80,12 +72,19 @@ export default [
 		exact:true,
 		component:'./RandomUser',
 	},
+
 // 	Bài 1
 {
 		path: '/bai-01',
 		name: 'Bài 1',
 		component: './Bai_1', 
 		icon: 'ArrowsAltOutlined',
+},
+//   Bài 2
+	{
+		path: "/Quanlydondangkythanhvien",
+		name: "Quản lý đơn đăng ký thành viên",
+		component: "./Bai_2",
 	},
 	// Bài 3
 
@@ -95,21 +94,7 @@ export default [
 		component: './Bai_3',
 		icon: 'TeamOutlined',
 	},
-    {
-        path: '/quan-ly-phong-hoc',
-        name: 'Quản lý phòng học',
-        icon: "BuildOutlined",
-        exact: true,
-        component: './QuanLyPhongHoc',
-    },
-    {
-        path: '/quan-ly-khoa-hoc',
-        name: 'Quản lý khóa học',
-        icon: "BookOutlined",
-        exact: true,
-        component: './QuanLyKhoaHoc',
-      }
-      ,
+
 //   Bài 4
       {
         path: '/bao-cao-thong-ke',

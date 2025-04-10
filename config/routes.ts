@@ -44,9 +44,9 @@ export default [
 		component: './todolist',
 	},
 	{
-		path: "/Quanlydonhang",
-		name: "QuanLyDonHang",
-		component: "./Quanlydonhang",
+		path: "/Quanlydondangkythanhvien",
+		name: "Quản lý đơn đăng ký thành viên",
+		component: "./Bai_2",
 	},
 
 

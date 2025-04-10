@@ -1,86 +1,68 @@
 {
-    "soVanBang": [
-        {
-            "id": 1,
-            "nam": 2023,
-            "so_vao_so": 1
-        },
-        {
-            "id": 2,
-            "nam": 2024,
-            "so_vao_so": 2
-        }
-    ],
-    "quyetDinh": [
-        {
-            "id": 1,
-            "so_quyet_dinh": "QĐ-2023-01",
-            "ngay_ban_hanh": "2023-06-01",
-            "trich_yeu": "Quyết định tốt nghiệp đợt 1 năm 2023",
-            "so_van_bang_id": 1
-        },
-        {
-            "id": 2,
-            "so_quyet_dinh": "QĐ-2023-02",
-            "ngay_ban_hanh": "2023-12-15",
-            "trich_yeu": "Quyết định tốt nghiệp đợt 2 năm 2023",
-            "so_van_bang_id": 1
-        }
-    ],
-    "cauHinh": [
-        {
-            "id": 1,
-            "ten_truong": "Dân tộc",
-            "kieu_du_lieu": "String"
-        },
-        {
-            "id": 2,
-            "ten_truong": "Điểm trung bình",
-            "kieu_du_lieu": "Number"
-        }
-    ],
-    "vanBang": [
-        {
-            "id": 1,
-            "so_vao_so": 1,
-            "so_hieu_van_bang": "VB001",
-            "ma_sinh_vien": "SV001",
-            "ho_ten": "Nguyen Van A",
-            "ngay_sinh": "1999-05-15",
-            "diem_trung_binh": 8.5,
-            "xep_loai": "Giỏi",
-            "he_dao_tao": "Chính quy",
-            "noi_sinh": "Hà Nội",
-            "dan_toc": "Kinh",
-            "quyet_dinh_id": 1
-        },
-        {
-            "id": 2,
-            "so_vao_so": 1,
-            "so_hieu_van_bang": "VB002",
-            "ma_sinh_vien": "SV002",
-            "ho_ten": "Tran Thi B",
-            "ngay_sinh": "2000-08-20",
-            "diem_trung_binh": 7.8,
-            "xep_loai": "Khá",
-            "he_dao_tao": "Tại chức",
-            "noi_sinh": "Hải Phòng",
-            "dan_toc": "Tày",
-            "quyet_dinh_id": 1
-        }
-    ],
-    "traCuuVanBang": {
-        "thamSoTimKiem": [
-            "so_hieu_van_bang",
-            "so_vao_so",
-            "ma_sinh_vien",
-            "ho_ten",
-            "ngay_sinh"
-        ],
-        "yeuCauNhapToiThieu": 2,
-        "tongSoLuotTraCuuTheoQuyetDinh": {
-            "QĐ2025-001": 20,
-            "QĐ2025-002": 8
-        }
+  "clubs": [
+    {
+      "id": "1",
+      "avatar": "https://via.placeholder.com/100",
+      "name": "Câu lạc bộ Kỹ năng",
+      "established": "2020-03-15",
+      "description": "<p>CLB rèn luyện kỹ năng mềm</p>",
+      "president": "Nguyễn Văn A",
+      "active": true
+    },
+    {
+      "id": "2",
+      "avatar": "https://via.placeholder.com/100",
+      "name": "Câu lạc bộ Công nghệ",
+      "established": "2019-06-21",
+      "description": "<p>CLB chuyên về lập trình, công nghệ</p>",
+      "president": "Trần Thị B",
+      "active": true
     }
+  ],
+  "applications": [
+    {
+      "id": "1",
+      "fullName": "Lê Văn C",
+      "email": "le.c@example.com",
+      "phone": "0123456789",
+      "gender": "Nam",
+      "address": "Hà Nội",
+      "strengths": "Giao tiếp",
+      "clubId": 1,
+      "reason": "Muốn rèn luyện kỹ năng",
+      "status": "Approved",
+      "note": "",
+      "history": [
+        {
+          "action": "Approved",
+          "by": "Admin",
+          "timestamp": "2025-04-10T07:44:27.504Z",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "4d2f",
+      "fullName": "Cuong Nguyen",
+      "email": "cuongnguyen2k5s@gmail.com",
+      "phone": "0383605017",
+      "gender": "Nam",
+      "address": "Hà Nam",
+      "clubId": 1,
+      "reason": "Yêu thích\n",
+      "status": "Approved"
+    }
+  ],
+  "members": [
+    {
+      "id": "1",
+      "fullName": "Phạm Thị D",
+      "email": "pham.d@example.com",
+      "phone": "0987654321",
+      "gender": "Nữ",
+      "address": "TP. Hồ Chí Minh",
+      "strengths": "Lập trình",
+      "clubId": 2
+    }
+  ]
 }

@@ -41,7 +41,7 @@ export default [
 	{
 		path: '/bai-01',
 		name: 'Bài 1',
-		component: './Bai_1', // Update this line to point to the index file
+		component: './Bai_1', 
 		icon: 'ArrowsAltOutlined',
 	},
 

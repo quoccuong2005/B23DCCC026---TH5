@@ -81,6 +81,13 @@ export default [
 		exact:true,
 		component:'./RandomUser',
 	},
+	// Bài 3
+	{
+		path: '/club-management',
+		name: 'Quản lý câu lạc bộ',
+		component: './Bai_3',
+		icon: 'TeamOutlined',
+	},
     {
         path: '/quan-ly-phong-hoc',
         name: 'Quản lý phòng học',

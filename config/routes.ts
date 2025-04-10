@@ -1,4 +1,6 @@
-﻿export default [
+﻿import path from "path";
+
+export default [
 	{
 		path: '/user',
 		layout: false,
@@ -34,6 +36,12 @@
 		path: '/random-user',
 		name: 'RandomUser',
 		component: './RandomUser',
+		icon: 'ArrowsAltOutlined',
+	},
+	{
+		path: '/bai-01',
+		name: 'Bài 1',
+		component: './Bai_1', // Update this line to point to the index file
 		icon: 'ArrowsAltOutlined',
 	},
 

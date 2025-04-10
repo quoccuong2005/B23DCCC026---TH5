@@ -1,0 +1,62 @@
+{
+  "clubs": [
+    {
+      "avatar": "https://photo.znews.vn/w1920/Uploaded/mdf_eioxrd/2021_07_06/1q.jpg",
+      "name": "Câu lạc bộ Kỹ năng 2355444",
+      "established": "2020-03-15",
+      "description": "<p>CLB rèn luyện kỹ năng mềm</p>",
+      "president": "Nguyễn Văn A",
+      "active": true,
+      "id": "1"
+    }
+  ],
+  "applications": [
+    {
+      "id": "1",
+      "fullName": "Lê Văn C",
+      "email": "le.c@example.com",
+      "phone": "0123456789",
+      "gender": "Nam",
+      "address": "Hà Nội",
+      "strengths": "Giao tiếp",
+      "clubId": 1,
+      "reason": "Muốn rèn luyện kỹ năng",
+      "status": "Pending",
+      "note": "",
+      "history": []
+    },
+    {
+      "id": "2",
+      "fullName": "Phạm Thị D",
+      "email": "pham.d@example.com",
+      "phone": "0987654321",
+      "gender": "Nữ",
+      "address": "TP. Hồ Chí Minh",
+      "strengths": "Lập trình",
+      "clubId": 2,
+      "reason": "Yêu thích công nghệ",
+      "status": "Approved",
+      "note": "",
+      "history": [
+        {
+          "action": "Approved",
+          "by": "admin",
+          "timestamp": "2025-04-09T17:00:00Z",
+          "reason": ""
+        }
+      ]
+    }
+  ],
+  "members": [
+    {
+      "id": "1",
+      "fullName": "Phạm Thị D",
+      "email": "pham.d@example.com",
+      "phone": "0987654321",
+      "gender": "Nữ",
+      "address": "TP. Hồ Chí Minh",
+      "strengths": "Lập trình",
+      "clubId": 2
+    }
+  ]
+}

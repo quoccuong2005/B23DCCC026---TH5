@@ -87,7 +87,21 @@ export default [
         icon: "BuildOutlined",
         exact: true,
         component: './QuanLyPhongHoc',
-    }
-
+    },
+    {
+        path: '/quan-ly-khoa-hoc',
+        name: 'Quản lý khóa học',
+        icon: "BookOutlined",
+        exact: true,
+        component: './QuanLyKhoaHoc',
+      }
+      ,
+      {
+        path: '/bao-cao-thong-ke',
+        name: 'Báo cáo thống kê',
+        icon: 'BarChartOutlined',
+        exact: true,
+        component: './Bai_4',
+      }
 
 ];

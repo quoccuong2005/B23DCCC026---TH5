@@ -97,6 +97,13 @@ export default [
 		component: './Bai_3',
 		icon: 'TeamOutlined',
 	},
+   {
+        path: '/bao-cao-thong-ke',
+        name: 'Báo cáo thống kê',
+        icon: 'BarChartOutlined',
+        exact: true,
+        component: './Bai_4',
+      },
     {
         path: '/quan-ly-phong-hoc',
         name: 'Quản lý phòng học',
@@ -112,12 +119,6 @@ export default [
         component: './QuanLyKhoaHoc',
       }
       ,
-      {
-        path: '/bao-cao-thong-ke',
-        name: 'Báo cáo thống kê',
-        icon: 'BarChartOutlined',
-        exact: true,
-        component: './Bai_4',
-      }
+     
 
 ];

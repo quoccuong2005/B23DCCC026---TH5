@@ -36,6 +36,13 @@
 		component: './RandomUser',
 		icon: 'ArrowsAltOutlined',
 	},
+	// Bài 3
+	{
+		path: '/club-management',
+		name: 'Quản lý câu lạc bộ',
+		component: './Bai_3',
+		icon: 'TeamOutlined',
+	},
 
 	// DANH MUC HE THONG
 	// {

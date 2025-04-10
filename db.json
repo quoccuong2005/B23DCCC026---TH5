@@ -1,0 +1,119 @@
+{
+	"clubs": [
+		{
+			"id": "1",
+			"avatar": "https://s120-ava-talk.zadn.vn/7/2/5/8/16/120/189a4b4690852859ebae72657fce1bbd.jpg",
+			"name": "Câu lạc bộ Kỹ năng",
+			"established": "2020-03-15",
+			"description": "<p>CLB rèn luyện kỹ năng mềm</p>",
+			"president": "Nguyễn Văn A",
+			"active": true
+		},
+		{
+			"id": "2",
+			"avatar": "https://s120-ava-talk.zadn.vn/7/2/5/8/16/120/189a4b4690852859ebae72657fce1bbd.jpg",
+			"name": "Câu lạc bộ Công nghệ",
+			"established": "2019-06-21",
+			"description": "<p>CLB chuyên về lập trình, công nghệ</p>",
+			"president": "Trần Thị B",
+			"active": true
+		}
+	],
+	"applications": [
+		{
+			"id": "1",
+			"fullName": "Lê Văn C",
+			"email": "le.c@example.com",
+			"phone": "0123456789",
+			"gender": "Nam",
+			"address": "Hà Nội",
+			"strengths": "Giao tiếp",
+			"clubId": 1,
+			"reason": "Muốn rèn luyện kỹ năng",
+			"status": "Approved",
+			"note": "",
+			"history": [
+				{
+					"action": "Approved",
+					"by": "admin",
+					"timestamp": "2025-04-10T07:36:55.827Z",
+					"reason": ""
+				}
+			]
+		},
+		{
+			"id": "2",
+			"fullName": "Phạm Thị D",
+			"email": "pham.d@example.com",
+			"phone": "0987654321",
+			"gender": "Nữ",
+			"address": "TP. Hồ Chí Minh",
+			"strengths": "Lập trình",
+			"clubId": 2,
+			"reason": "Yêu thích công nghệ",
+			"status": "Approved",
+			"note": "",
+			"history": [
+				{
+					"action": "Approved",
+					"by": "admin",
+					"timestamp": "2025-04-09T17:00:00Z",
+					"reason": ""
+				}
+			]
+		},
+		{
+			"id": "6837",
+			"fullName": "vu tien loc",
+			"email": "vuloc1810@gmail.com",
+			"phone": "0378208856",
+			"gender": "Nữ",
+			"address": "doi 1 thon tan do",
+			"strengths": "Đẹp tria",
+			"clubId": "2",
+			"reason": "Ok",
+			"status": "Approved",
+			"history": [
+				{
+					"action": "Approved",
+					"by": "admin",
+					"timestamp": "2025-04-10T07:37:35.522Z",
+					"reason": ""
+				}
+			],
+			"note": ""
+		}
+	],
+	"members": [
+		{
+			"id": "1",
+			"fullName": "Phạm Thị D",
+			"email": "pham.d@example.com",
+			"phone": "0987654321",
+			"gender": "Nữ",
+			"address": "TP. Hồ Chí Minh",
+			"strengths": "Lập trình",
+			"clubId": 2
+		},
+		{
+			"id": "b96a",
+			"fullName": "Lê Văn C",
+			"email": "le.c@example.com",
+			"phone": "0123456789",
+			"gender": "Nam",
+			"address": "Hà Nội",
+			"strengths": "Giao tiếp",
+			"clubId": 2
+		},
+		{
+			"id": "7e76",
+			"fullName": "vu tien loc",
+			"email": "vuloc1810@gmail.com",
+			"phone": "0378208856",
+			"gender": "Nữ",
+			"address": "doi 1 thon tan do",
+			"strengths": "Đẹp tria",
+			"clubId": "2"
+		}
+	]
+}

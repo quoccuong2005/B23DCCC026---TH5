@@ -1,0 +1,68 @@
+{
+  "clubs": [
+    {
+      "id": "1",
+      "avatar": "https://via.placeholder.com/100",
+      "name": "Câu lạc bộ Kỹ năng",
+      "established": "2020-03-15",
+      "description": "<p>CLB rèn luyện kỹ năng mềm</p>",
+      "president": "Nguyễn Văn A",
+      "active": true
+    },
+    {
+      "id": "2",
+      "avatar": "https://via.placeholder.com/100",
+      "name": "Câu lạc bộ Công nghệ",
+      "established": "2019-06-21",
+      "description": "<p>CLB chuyên về lập trình, công nghệ</p>",
+      "president": "Trần Thị B",
+      "active": true
+    }
+  ],
+  "applications": [
+    {
+      "id": "1",
+      "fullName": "Lê Văn C",
+      "email": "le.c@example.com",
+      "phone": "0123456789",
+      "gender": "Nam",
+      "address": "Hà Nội",
+      "strengths": "Giao tiếp",
+      "clubId": 1,
+      "reason": "Muốn rèn luyện kỹ năng",
+      "status": "Approved",
+      "note": "",
+      "history": [
+        {
+          "action": "Approved",
+          "by": "Admin",
+          "timestamp": "2025-04-10T07:44:27.504Z",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "4d2f",
+      "fullName": "Cuong Nguyen",
+      "email": "cuongnguyen2k5s@gmail.com",
+      "phone": "0383605017",
+      "gender": "Nam",
+      "address": "Hà Nam",
+      "clubId": 1,
+      "reason": "Yêu thích\n",
+      "status": "Approved"
+    }
+  ],
+  "members": [
+    {
+      "id": "1",
+      "fullName": "Phạm Thị D",
+      "email": "pham.d@example.com",
+      "phone": "0987654321",
+      "gender": "Nữ",
+      "address": "TP. Hồ Chí Minh",
+      "strengths": "Lập trình",
+      "clubId": 2
+    }
+  ]
+}

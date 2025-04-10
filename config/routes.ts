@@ -1,5 +1,3 @@
-﻿import component from "@/locales/en-US/component";
-
 export default [
     {
         path: '/user',
@@ -80,6 +78,17 @@ export default [
 		icon: "UserOutlined",
 		exact:true,
 		component:'./RandomUser',
+	},
+
+	{
+		path: '/todolist',
+		name: 'Todolist',
+		component: './todolist',
+	},
+	{
+		path: "/Quanlydondangkythanhvien",
+		name: "Quản lý đơn đăng ký thành viên",
+		component: "./Bai_2",
 	},
 	// Bài 3
 	{

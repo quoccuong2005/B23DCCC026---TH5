@@ -72,36 +72,4 @@ export default [
 		exact:true,
 		component:'./RandomUser',
 	},
-
-// 	Bài 1
-{
-		path: '/bai-01',
-		name: 'Bài 1',
-		component: './Bai_1', 
-		icon: 'ArrowsAltOutlined',
-},
-//   Bài 2
-	{
-		path: "/Quanlydondangkythanhvien",
-		name: "Quản lý đơn đăng ký thành viên",
-		component: "./Bai_2",
-	},
-	// Bài 3
-
-	{
-		path: '/club-management',
-		name: 'Quản lý câu lạc bộ',
-		component: './Bai_3',
-		icon: 'TeamOutlined',
-	},
-
-//   Bài 4
-      {
-        path: '/bao-cao-thong-ke',
-        name: 'Báo cáo thống kê',
-        icon: 'BarChartOutlined',
-        exact: true,
-        component: './Bai_4',
-      }
-
 ];
